@@ -17,7 +17,7 @@ GenerateInfo();
 
 
 // If user presses enter in textinput
-planetNameInput.addEventListener("keyup", function(e) {
+planetNameInput.addEventListener("keyup", function (e) {
 	if (event.keyCode === 13) {
 		displayPlanet();
 	}
@@ -138,7 +138,7 @@ function drawLand(points) {
 function drawOcean() {
 	ctx.fillStyle = getRandomColor("Ocean");
 	ctx.beginPath();
-	ctx.arc(width/2, width/2, width/2, 0, 2 * Math.PI);
+	ctx.arc(width / 2, width / 2, width / 2, 0, 2 * Math.PI);
 	ctx.fill();
 }
 
@@ -158,8 +158,8 @@ function makePlanet() {
 		x += ((width) / amountOfPoints);
 		y = ((width) / amountOfPoints) / 2;
 	}
-	
-	
+
+
 	drawOcean();
 	landColor = getRandomColor("Land color");
 	drawLand(points);
@@ -194,11 +194,11 @@ function GenerateInfo() {
 
 	info += "<h3>Galaxy</h3>";
 	if (getRandomNumber("unnamed galaxy?") < 0.6) {
-		let galaxys = ["Milky Way", "Milky Way","Milky Way", "Andromeda", "Andromeda", "Mayall's Object", "Bode's Galaxy", "Black Eye Galaxy", "Circinus", "Sunflower Galaxy", "Estella", "Lyra"]
-		info += "<p>" + galaxys[Math.floor(getRandomNumber("galaxy")*galaxys.length)] + "</p>";
+		let galaxys = ["Milky Way", "Milky Way", "Milky Way", "Andromeda", "Andromeda", "Mayall's Object", "Bode's Galaxy", "Black Eye Galaxy", "Circinus", "Sunflower Galaxy", "Estella", "Lyra"]
+		info += "<p>" + galaxys[Math.floor(getRandomNumber("galaxy") * galaxys.length)] + "</p>";
 	} else {
 		let code = "";
-		let letters = "123456789123456789123456789ABCdEFGHIJKLMNOPQRSTUVWXZY";
+		let letters = "123456789123456789123456789ABCDEFGHIJKLMNOPQRSTUVWXZY";
 		for (let i = 0; i < Math.floor(getRandomNumber("unnamed") * (5 - 2)) + 2; i++) {
 			code += letters[Math.floor(getRandomNumber("unamed lettercode" + i) * letters.length)];
 		}
@@ -213,5 +213,5 @@ function GenerateInfo() {
 	}
 
 	infoArea.innerHTML = info;
-	
+
 }
